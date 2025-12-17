@@ -5,6 +5,9 @@ import com.example.demo.service.StudentService;
 public class StudentServiceImple implements StudentService{
     private final StudentRepository studentRepository;
     public StudentServiceImple(StudentRepository studentRepository){
-        this.studentRe
+        this.studentRepository=studentRepository;
+    }
+    public Student saveStudent(Student student){
+        return studentRepository.save(student);
     }
 }

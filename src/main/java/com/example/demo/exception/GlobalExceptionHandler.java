@@ -9,7 +9,16 @@ public class GlobalExceptionHandler{
        public ResponseEntity<String>handleNotFound(ResourceNotFoundException ex){
         return new ResponseEntity<>.(ex.getMessage(),HttpStatus.NOT_FOUND);
        }
-       @ExceptionHandler(MethodArgumentNotValidException.class)
-       public ResponseEntity<Map<String,String>>handleMethod(MethodArgumentNotValidException)
-       Map<String,String>error=new HashMap
+@ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String,String>> handleMethod(MethodArgumentNotValidException mex){
+        
+        Map<String,String> error=new HashMap<>();
+
+        ex.getBindingResult().getFieldErrors().forEach(error ->
+                errors.put(error.getField(), error.getDefaultMessage())
+        );
+
+        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
+
+} 

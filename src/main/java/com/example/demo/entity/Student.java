@@ -37,10 +37,10 @@ public class Student {
     
     private LocalDate dob;
     private float cgpa;
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getName() {
@@ -67,7 +67,7 @@ public class Student {
     public void setCgpa(float cgpa) {
         this.cgpa = cgpa;
     }
-    public Student(int id, String name, String email, LocalDate dob, float cgpa) {
+    public Student(Long id, String name, String email, LocalDate dob, float cgpa) {
         this.id = id;
         this.name = name;
         this.email = email;

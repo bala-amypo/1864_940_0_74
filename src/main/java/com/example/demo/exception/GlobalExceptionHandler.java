@@ -5,10 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 @RestControllerAdvice
 public class GlobalExceptionHandler{
-    @ExceptionHandler(ResourceNotFoundException.class){
+    @ExceptionHandler(ResourceNotFoundException.class)
        public ResponseEntity<String>handleNotFound(ResourceNotFoundException ex){
         return new ResponseEntity<>.(ex.getMessage(),HttpStatus.NOT_FOUND);
        }
-       @ExceptionHandler
+       @ExceptionHandler(MethodArgumentNotValidException.class)
+       public ResponseEntity<Map<String,String>>handleMethod(MethodArgumentNotValidException)
+       Map<String,String>error=new HashMap
     }
-}

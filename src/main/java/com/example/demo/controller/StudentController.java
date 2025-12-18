@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
-import jakarta.validation.valid;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 @RestController 
 public class StudentController {
 
@@ -15,7 +16,7 @@ public class StudentController {
     private StudentService studentService; 
 
     @PostMapping("/postdata")
-    public ResponseEntity<Student> postdata(@RequestBody Student student){
-        return studentService.saveStudent(student);
+    public ResponseEntity<Student> postdata(@Valid @RequestBody Student student){
+        return new ResponseEntity<>(studentService.saveStudent(student),HttpStatus.CREATED);
     }
 }

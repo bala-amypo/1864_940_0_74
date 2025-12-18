@@ -14,7 +14,7 @@ public class GlobalExceptionHandler{
         
         Map<String,String> error=new HashMap<>();
 
-        mex.getBindingResult().getFieldErrors().forEach(error ->
+        ex.getBindingResult().getFieldErrors().forEach(error ->
                 errors.put(error.getField(), error.getDefaultMessage())
         );
 

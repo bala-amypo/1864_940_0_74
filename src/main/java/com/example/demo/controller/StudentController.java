@@ -1,4 +1,4 @@
-package com.example.aiml.controller;
+package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.aiml.entity.Student;
-import com.example.aiml.service.StudentService;
+import com.example.demo.entity.Student;
+import com.example.demo.service.StudentService;
 
 import jakarta.validation.Valid;
 
